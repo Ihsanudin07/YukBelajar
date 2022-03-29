@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         binding.buttonHitung.setOnClickListener{
             hitungKecepatan()
         }
+
+        binding.buttonReset.setOnClickListener{
+            resetInputan()
+        }
     }
 
     private fun hitungKecepatan(){
@@ -45,5 +49,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.textKecepatan.text = getString(R.string.hasilkecepatan, hitungkecepatan)
         binding.textHasilJarak.text = getString(R.string.hasiljarak, hitungjarak)
+    }
+
+    private fun resetInputan(){
+        binding.editJarakText.setText("")
+        binding.editWaktuText.setText("")
+        binding.editKecepatanText.setText("")
     }
 }
