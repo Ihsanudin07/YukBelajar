@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Yuk Belajar</string>
+    <string name="judul">Menghitung Kecepatan dan Rumusnya</string>
+    <string name="intro">Kecepatan adalah besarnya jarak atau panjang lintasan dibagi dengan waktu. kita juga bisa menghitung kecepatan dengan mencari rumus kecepatan, jarak, dan waktu yang ada. Rumus kecepatan adalah jarak dibagi waktu atau bisa ditulis v = s / t</string>
+    <string name="jarak">Jarak (km)</string>
+    <string name="waktu">Waktu (jam)</string>
+    <string name="hitung">Hitung</string>
+    <string name="reset">Reset</string>
 </resources>

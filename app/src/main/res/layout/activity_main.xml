@@ -7,12 +7,95 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/judul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/judul"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:justificationMode="inter_word"
+        android:text="@string/intro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judul" />
+
+    <TextView
+        android:id="@+id/textJarak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/editJarakText"
+        android:text="@string/jarak"
+        app:layout_constraintBottom_toBottomOf="@id/editJarakText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editJarakText" />
+
+    <EditText
+        android:id="@+id/editJarakText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textJarak"
+        app:layout_constraintTop_toBottomOf="@+id/intro" />
+
+    <TextView
+        android:id="@+id/textWaktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/waktu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/editWaktuText"
+        app:layout_constraintTop_toTopOf="@id/editWaktuText"/>
+
+    <EditText
+        android:id="@+id/editWaktuText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editJarakText"
+        app:layout_constraintTop_toBottomOf="@+id/editJarakText" />
+
+    <Button
+        android:id="@+id/buttonHitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hitung"
+        app:layout_constraintTop_toBottomOf="@+id/editWaktuText"
+        app:layout_constraintStart_toStartOf="@id/editWaktuText"/>
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/reset"
+        app:layout_constraintStart_toEndOf="@id/buttonHitung"
+        app:layout_constraintTop_toBottomOf="@+id/editWaktuText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
