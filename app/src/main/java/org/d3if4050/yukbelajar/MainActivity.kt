@@ -2,7 +2,9 @@ package org.d3if4050.yukbelajar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
+import android.widget.Toast
 import org.d3if4050.yukbelajar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hitungKecepatan(){
-        Log.d("MainActivity", "Tombol diklik!")
+        val jarak = binding.editJarakText.text.toString()
+        if (TextUtils.isEmpty(jarak)){
+            Toast.makeText(this, R.string.jarakKosong, Toast.LENGTH_LONG).show()
+            return
+        }
+
+        val waktu = binding.editWaktuText.text.toString()
+        if (TextUtils.isEmpty(waktu)){
+            Toast.makeText(this, R.string.waktuKosong, Toast.LENGTH_LONG).show()
+            return
+        }
+
+        val kecepatan = binding.editKecepatanText.text.toString()
+        if (TextUtils.isEmpty(kecepatan)){
+            Toast.makeText(this, R.string.kecepatanKosong, Toast.LENGTH_LONG).show()
+            return
+        }
+        val hitungkecepatan = jarak.toFloat() / waktu.toFloat()
+        val hitungjarak = kecepatan.toFloat() / waktu.toFloat()
+
+        binding.textKecepatan.text = getString(R.string.hasilkecepatan, hitungkecepatan)
+        binding.textHasilJarak.text = getString(R.string.hasiljarak, hitungjarak)
     }
 }

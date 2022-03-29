@@ -48,13 +48,13 @@
         android:id="@+id/editJarakText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textJarak"
+        app:layout_constraintStart_toStartOf="@id/editKecepatanText"
         app:layout_constraintTop_toBottomOf="@+id/intro" />
 
     <TextView
@@ -76,8 +76,32 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/editJarakText"
+        app:layout_constraintStart_toStartOf="@id/editKecepatanText"
         app:layout_constraintTop_toBottomOf="@+id/editJarakText" />
+
+    <TextView
+        android:id="@+id/textInputKecepatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/kecepatan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/editKecepatanText"
+        app:layout_constraintTop_toTopOf="@id/editKecepatanText"/>
+
+    <EditText
+        android:id="@+id/editKecepatanText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textInputKecepatan"
+        app:layout_constraintTop_toBottomOf="@id/editWaktuText"/>
+
 
     <Button
         android:id="@+id/buttonHitung"
@@ -85,8 +109,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/hitung"
-        app:layout_constraintTop_toBottomOf="@+id/editWaktuText"
-        app:layout_constraintStart_toStartOf="@id/editWaktuText"/>
+        app:layout_constraintTop_toBottomOf="@+id/editKecepatanText"
+        app:layout_constraintStart_toStartOf="@id/editKecepatanText"/>
 
     <Button
         android:id="@+id/buttonReset"
@@ -96,6 +120,40 @@
         android:layout_marginTop="16dp"
         android:text="@string/reset"
         app:layout_constraintStart_toEndOf="@id/buttonHitung"
-        app:layout_constraintTop_toBottomOf="@+id/editWaktuText" />
+        app:layout_constraintTop_toBottomOf="@+id/editKecepatanText" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/divider"
+        app:layout_constraintTop_toBottomOf="@id/buttonHitung"/>
+
+    <TextView
+        android:id="@+id/textKecepatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:text="Kecepatan : 10 km/jam"/>
+
+    <TextView
+        android:id="@+id/textHasilJarak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textKecepatan"
+        android:text="Jarak : 5 km"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
