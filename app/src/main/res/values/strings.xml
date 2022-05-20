@@ -20,4 +20,6 @@
     <string name="lihat_rumus">Lihat Rumus</string>
     <string name="tentang_aplikasi">About App</string>
     <string name="isi">Aplikasi ini dibuat untuk mencari kecepatan dan jarak. dibuat oleh Ihsanudin Pradana Putra (6706204050)</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikan_temp">Jarak : %1$s km\nWaktu : %2$s jam\nKecepatan : %3$s km/jam\n\nHasil Kecepatan\n%4$s\n%5$s</string>
 </resources>

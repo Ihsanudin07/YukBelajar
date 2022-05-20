@@ -1,5 +1,6 @@
 package org.d3if4050.yukbelajar.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
@@ -43,6 +44,8 @@ class HitungFragment : Fragment() {
                 R.id.action_hitungFragment_to_rumusFragment
             )
         }
+
+        binding.shareButton.setOnClickListener { shareData() }
 
         viewModel.getHasilKecepatan().observe(requireActivity(), { showResult(it)})
     }
@@ -97,6 +100,22 @@ class HitungFragment : Fragment() {
         if (result == null) return
         binding.textKecepatan.text = getString(R.string.hasilkecepatan, result.kecepatan)
         binding.textHasilJarak.text = getString(R.string.hasiljarak, result.jarak)
-        binding.rumusButton.visibility = View.VISIBLE
+        binding.buttonGroup.visibility = View.VISIBLE
+    }
+
+    private fun shareData(){
+        val message = getString(R.string.bagikan_temp,
+        binding.editJarakText.text,
+        binding.editWaktuText.text,
+        binding.editKecepatanText.text,
+        binding.textKecepatan.text,
+        binding.textHasilJarak.text)
+
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
+        if (shareIntent.resolveActivity(
+                requireActivity().packageManager) != null) {
+                startActivity(shareIntent)
+        }
     }
 }
