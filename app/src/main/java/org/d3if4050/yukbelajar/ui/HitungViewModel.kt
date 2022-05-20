@@ -1,4 +1,4 @@
-package org.d3if4050.yukbelajar
+package org.d3if4050.yukbelajar.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
