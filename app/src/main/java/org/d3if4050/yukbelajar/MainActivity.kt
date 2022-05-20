@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         binding.buttonReset.setOnClickListener{
             resetInputan()
         }
+
+        viewModel.getHasilKecepatan().observe(this, { showResult(it)})
     }
 
     private fun hitungKecepatan(){
@@ -50,12 +52,11 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val result = viewModel.hitungKecepatan(
+        viewModel.hitungKecepatan(
             jarak.toFloat(),
             waktu.toFloat(),
             kecepatan.toFloat()
         )
-        showResult(result)
     }
 
     private fun resetInputan(){
@@ -64,7 +65,8 @@ class MainActivity : AppCompatActivity() {
         binding.editKecepatanText.setText("")
     }
 
-    private fun showResult(result: HasilKecepatan){
+    private fun showResult(result: HasilKecepatan?){
+        if (result == null) return
         binding.textKecepatan.text = getString(R.string.hasilkecepatan, result.kecepatan)
         binding.textHasilJarak.text = getString(R.string.hasiljarak, result.jarak)
     }
