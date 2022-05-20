@@ -9,5 +9,21 @@
         android:id="@+id/hitungFragment"
         android:name="org.d3if4050.yukbelajar.ui.HitungFragment"
         android:label="fragment_hitung"
-        tools:layout="@layout/fragment_hitung" />
+        tools:layout="@layout/fragment_hitung">
+        <action
+            android:id="@+id/action_hitungFragment_to_rumusFragment"
+            app:destination="@id/rumusFragment" />
+        <action
+            android:id="@+id/action_hitungFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rumusFragment"
+        android:name="org.d3if4050.yukbelajar.ui.RumusFragment"
+        tools:layout="@layout/fragment_lihatrumus" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="org.d3if4050.yukbelajar.ui.AboutFragment"
+        android:label="@string/tentang_aplikasi"
+        tools:layout="@layout/fragment_tentang" />
 </navigation>

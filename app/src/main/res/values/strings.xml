@@ -17,4 +17,7 @@
     <string name="rumus_kecepatan">Kecepatan(v) = Jarak(s) / Waktu(t)</string>
     <string name="rumus_jarak">Jarak(s) = Kecepatan(v) / Waktu(t)</string>
     <string name="rumus">RUMUS RUMUS PINTAR :)</string>
+    <string name="lihat_rumus">Lihat Rumus</string>
+    <string name="tentang_aplikasi">About App</string>
+    <string name="isi">Aplikasi ini dibuat untuk mencari kecepatan dan jarak. dibuat oleh Ihsanudin Pradana Putra (6706204050)</string>
 </resources>
