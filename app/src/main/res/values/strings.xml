@@ -12,4 +12,9 @@
     <string name="jarakKosong">Jarak Tidak Boleh Kosong!</string>
     <string name="waktuKosong">Waktu Tidak Boleh Kosong!</string>
     <string name="kecepatanKosong">Kecepatan Tidak Boleh Kosong!</string>
+    <string name="judul_kecepatan">Rumus Mencari Kecepatan</string>
+    <string name="judul_jarak">Rumus Mencari Jarak</string>
+    <string name="rumus_kecepatan">Kecepatan(v) = Jarak(s) / Waktu(t)</string>
+    <string name="rumus_jarak">Jarak(s) = Kecepatan(v) / Waktu(t)</string>
+    <string name="rumus">RUMUS RUMUS PINTAR :)</string>
 </resources>
