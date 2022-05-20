@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import org.d3if4050.yukbelajar.databinding.ActivityMainBinding
+import org.d3if4050.yukbelajar.model.HasilKecepatan
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,16 +45,30 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.kecepatanKosong, Toast.LENGTH_LONG).show()
             return
         }
-        val hitungkecepatan = jarak.toFloat() / waktu.toFloat()
-        val hitungjarak = kecepatan.toFloat() / waktu.toFloat()
 
-        binding.textKecepatan.text = getString(R.string.hasilkecepatan, hitungkecepatan)
-        binding.textHasilJarak.text = getString(R.string.hasiljarak, hitungjarak)
+        val result = hitungKecepatan(
+            jarak.toFloat(),
+            waktu.toFloat(),
+            kecepatan.toFloat()
+        )
+        showResult(result)
     }
 
     private fun resetInputan(){
         binding.editJarakText.setText("")
         binding.editWaktuText.setText("")
         binding.editKecepatanText.setText("")
+    }
+
+    private fun hitungKecepatan(jarak: Float, waktu: Float, kecepatan: Float): HasilKecepatan{
+        val hitungKec = jarak / waktu
+        val hitungJar = kecepatan / waktu
+
+        return HasilKecepatan(hitungKec, hitungJar)
+    }
+
+    private fun showResult(result: HasilKecepatan){
+        binding.textKecepatan.text = getString(R.string.hasilkecepatan, result.kecepatan)
+        binding.textHasilJarak.text = getString(R.string.hasiljarak, result.jarak)
     }
 }
