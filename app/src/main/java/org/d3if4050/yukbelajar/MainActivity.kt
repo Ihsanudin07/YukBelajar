@@ -5,12 +5,16 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import org.d3if4050.yukbelajar.databinding.ActivityMainBinding
 import org.d3if4050.yukbelajar.model.HasilKecepatan
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(this)[MainViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val result = hitungKecepatan(
+        val result = viewModel.hitungKecepatan(
             jarak.toFloat(),
             waktu.toFloat(),
             kecepatan.toFloat()
@@ -58,13 +62,6 @@ class MainActivity : AppCompatActivity() {
         binding.editJarakText.setText("")
         binding.editWaktuText.setText("")
         binding.editKecepatanText.setText("")
-    }
-
-    private fun hitungKecepatan(jarak: Float, waktu: Float, kecepatan: Float): HasilKecepatan{
-        val hitungKec = jarak / waktu
-        val hitungJar = kecepatan / waktu
-
-        return HasilKecepatan(hitungKec, hitungJar)
     }
 
     private fun showResult(result: HasilKecepatan){
