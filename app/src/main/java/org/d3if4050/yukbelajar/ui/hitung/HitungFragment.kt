@@ -1,8 +1,9 @@
-package org.d3if4050.yukbelajar.ui
+package org.d3if4050.yukbelajar.ui.hitung
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -11,13 +12,17 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if4050.yukbelajar.R
 import org.d3if4050.yukbelajar.databinding.FragmentHitungBinding
+import org.d3if4050.yukbelajar.db.KecepatanDb
 import org.d3if4050.yukbelajar.model.HasilKecepatan
+import org.d3if4050.yukbelajar.ui.HitungViewModel
 
 class HitungFragment : Fragment() {
 
     private lateinit var binding: FragmentHitungBinding
-    private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(requireActivity())[MainViewModel::class.java]
+    private val viewModel: HitungViewModel by lazy {
+        val db = KecepatanDb.getInstance(requireContext())
+        val factory = HitungViewModelFactory(db.dao)
+        ViewModelProvider(this, factory)[HitungViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -48,6 +53,10 @@ class HitungFragment : Fragment() {
         binding.shareButton.setOnClickListener { shareData() }
 
         viewModel.getHasilKecepatan().observe(requireActivity(), { showResult(it)})
+        viewModel.data.observe(viewLifecycleOwner, {
+            if (it == null) return@observe
+            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
