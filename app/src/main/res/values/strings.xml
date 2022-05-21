@@ -26,4 +26,8 @@
     <string name="histori">Histori</string>
     <string name="hasil_x">Hasil Kecepatan: %1$.0f km/jam - Jarak: %2$.0f jam</string>
     <string name="data_x">S: %1$.0f km - T: %2$.0f jam - V: %3$.0f km/jam</string>
+    <string name="hapus_histori">Hapus Histori</string>
+    <string name="konfirmasi_hapus">Apakah Anda Ingin Menghapus Semua Histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
 </resources>

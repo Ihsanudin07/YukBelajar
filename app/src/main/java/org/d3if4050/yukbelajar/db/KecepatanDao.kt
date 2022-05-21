@@ -13,4 +13,7 @@ interface KecepatanDao {
 
     @Query("SELECT * FROM yukBelajar ORDER BY id DESC")
     fun getLastKecepatan(): LiveData<List<KecepatanEntity>>
+
+    @Query("DELETE FROM yukBelajar")
+    fun clearData()
 }
