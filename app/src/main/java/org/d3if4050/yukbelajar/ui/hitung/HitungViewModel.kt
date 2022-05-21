@@ -15,8 +15,6 @@ class HitungViewModel(private val db: KecepatanDao) : ViewModel(){
 
     private val hasilKecepatan = MutableLiveData<HasilKecepatan?>()
 
-    val data = db.getLastKecepatan()
-
     public fun hitungKecepatan(jarak: Float, waktu: Float, kecepatan: Float){
         val hitungKec = jarak / waktu
         val hitungJar = kecepatan / waktu

@@ -11,6 +11,6 @@ interface KecepatanDao {
     @Insert
     fun insert(yukBelajar: KecepatanEntity)
 
-    @Query("SELECT * FROM yukBelajar ORDER BY id DESC LIMIT 1")
-    fun getLastKecepatan(): LiveData<KecepatanEntity?>
+    @Query("SELECT * FROM yukBelajar ORDER BY id DESC")
+    fun getLastKecepatan(): LiveData<List<KecepatanEntity>>
 }
