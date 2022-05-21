@@ -10,24 +10,22 @@ import kotlinx.coroutines.withContext
 import org.d3if4050.yukbelajar.db.KecepatanDao
 import org.d3if4050.yukbelajar.db.KecepatanEntity
 import org.d3if4050.yukbelajar.model.HasilKecepatan
+import org.d3if4050.yukbelajar.model.hitungKecepatan
 
 class HitungViewModel(private val db: KecepatanDao) : ViewModel(){
 
     private val hasilKecepatan = MutableLiveData<HasilKecepatan?>()
 
     public fun hitungKecepatan(jarak: Float, waktu: Float, kecepatan: Float){
-        val hitungKec = jarak / waktu
-        val hitungJar = kecepatan / waktu
-
-        hasilKecepatan.value = HasilKecepatan(hitungKec, hitungJar)
+        val dataKecepatan = KecepatanEntity(
+            jarak = jarak,
+            waktu = waktu,
+            kecepatan = kecepatan
+        )
+        hasilKecepatan.value = dataKecepatan.hitungKecepatan()
 
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                val dataKecepatan = KecepatanEntity(
-                    jarak = jarak,
-                    waktu = waktu,
-                    kecepatan = kecepatan
-                )
                 db.insert(dataKecepatan)
             }
         }

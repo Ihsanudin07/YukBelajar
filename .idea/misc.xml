@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/drawable/circle_background.xml" value="0.1" />
         <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/layout/fragment_histori.xml" value="0.17553191489361702" />
         <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/layout/fragment_hitung.xml" value="0.25" />
         <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/layout/fragment_lihatrumus.xml" value="0.25" />
         <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/layout/fragment_tentang.xml" value="0.33" />
+        <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/layout/item_histori.xml" value="0.5" />
         <entry key="..\:/Kuliah/TELKOM UNIVERSITY/SEM 4/Perangkat Bergerak 1/Tugas Tugas/YukBelajar/app/src/main/res/menu/options_menu.xml" value="0.3" />
       </map>
     </option>

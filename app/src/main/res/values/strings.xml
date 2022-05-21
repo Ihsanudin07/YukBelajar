@@ -24,4 +24,6 @@
     <string name="bagikan_temp">Jarak : %1$s km\nWaktu : %2$s jam\nKecepatan : %3$s km/jam\n\nHasil Kecepatan\n%4$s\n%5$s</string>
     <string name="belum_ada_data">Belum ada data</string>
     <string name="histori">Histori</string>
+    <string name="hasil_x">Hasil Kecepatan: %1$.0f km/jam - Jarak: %2$.0f jam</string>
+    <string name="data_x">S: %1$.0f km - T: %2$.0f jam - V: %3$.0f km/jam</string>
 </resources>
