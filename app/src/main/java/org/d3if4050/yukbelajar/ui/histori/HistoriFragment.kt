@@ -6,12 +6,17 @@ import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 import org.d3if4050.yukbelajar.R
+import org.d3if4050.yukbelajar.data.SettingDataStore
+import org.d3if4050.yukbelajar.data.dataStore
 import org.d3if4050.yukbelajar.databinding.FragmentHistoriBinding
 import org.d3if4050.yukbelajar.db.KecepatanDb
 
@@ -25,6 +30,7 @@ class HistoriFragment: Fragment() {
     private lateinit var binding: FragmentHistoriBinding
     private lateinit var myAdapter: HistoriAdapter
     private var isLinearLayoutManager = true
+    private lateinit var layoutDataStore: SettingDataStore
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,6 +49,13 @@ class HistoriFragment: Fragment() {
             adapter = myAdapter
             setHasFixedSize(true)
         }
+        layoutDataStore = SettingDataStore(requireContext().dataStore)
+        layoutDataStore.preferenceFlow.asLiveData()
+            .observe(viewLifecycleOwner, { value ->
+                isLinearLayoutManager = value
+                chooseLayout()
+                activity?.invalidateOptionsMenu()
+            })
         viewModel.data.observe(viewLifecycleOwner, {
             binding.emptyView.visibility = if (it.isEmpty())
                 View.VISIBLE else View.GONE
@@ -87,6 +100,12 @@ class HistoriFragment: Fragment() {
 
             R.id.action_switch_layout -> {
                 isLinearLayoutManager = !isLinearLayoutManager
+                lifecycleScope.launch {
+                    layoutDataStore.saveLayoutToPreferencesStore(
+                        isLinearLayoutManager, requireContext()
+                    )
+                }
+
                 chooseLayout()
                 setIcon(item)
                 true
