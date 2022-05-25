@@ -7,8 +7,8 @@
     <string name="kecepatan">Kecepatan (km/jam)</string>
     <string name="hitung">Hitung</string>
     <string name="reset">Reset</string>
-    <string name="hasilkecepatan">Kecepatan : %1$.0f km/jam</string>
-    <string name="hasiljarak">Jarak : %1$.0f km</string>
+    <string name="hasilkecepatan">Kecepatan : %1$.2f km/jam</string>
+    <string name="hasiljarak">Jarak : %1$.2f km</string>
     <string name="jarakKosong">Jarak Tidak Boleh Kosong!</string>
     <string name="waktuKosong">Waktu Tidak Boleh Kosong!</string>
     <string name="kecepatanKosong">Kecepatan Tidak Boleh Kosong!</string>
@@ -24,10 +24,12 @@
     <string name="bagikan_temp">Jarak : %1$s km\nWaktu : %2$s jam\nKecepatan : %3$s km/jam\n\nHasil Kecepatan\n%4$s\n%5$s</string>
     <string name="belum_ada_data">Belum ada data</string>
     <string name="histori">Histori</string>
-    <string name="hasil_x">Hasil Kecepatan: %1$.0f km/jam - Jarak: %2$.0f jam</string>
-    <string name="data_x">S: %1$.0f km - T: %2$.0f jam - V: %3$.0f km/jam</string>
+    <string name="hasil_x">Hasil Kecepatan: %1$.2f km/jam - Jarak: %2$.2f jam</string>
+    <string name="data_x">S: %1$.2f km - T: %2$.2f jam - V: %3$.2f km/jam</string>
     <string name="hapus_histori">Hapus Histori</string>
     <string name="konfirmasi_hapus">Apakah Anda Ingin Menghapus Semua Histori?</string>
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
+    <string name="rumus2">Rumus</string>
+    <string name="action_switch_layout">Ubah Layout</string>
 </resources>
