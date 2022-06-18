@@ -9,11 +9,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.d3if4050.yukbelajar.LatihanSoal
 import org.d3if4050.yukbelajar.R
+import org.d3if4050.yukbelajar.network.ApiStatus
 import org.d3if4050.yukbelajar.network.LatihanSoalApi
 import java.lang.Exception
 
 class LatihanSoalViewModel: ViewModel() {
 
+    private val status = MutableLiveData<ApiStatus>()
     private val data = MutableLiveData<List<LatihanSoal>>()
 
     init {
@@ -22,10 +24,13 @@ class LatihanSoalViewModel: ViewModel() {
 
     private fun retrieveData(){
         viewModelScope.launch(Dispatchers.IO){
+            status.postValue(ApiStatus.LOADING)
             try {
                 data.postValue(LatihanSoalApi.service.getLatihanSoal())
+                status.postValue(ApiStatus.SUCCESS)
             }catch (e: Exception){
                 Log.d("LatihanSoalViewModel","Failure: ${e.message}")
+                status.postValue(ApiStatus.FAILED)
             }
         }
     }
@@ -40,4 +45,6 @@ class LatihanSoalViewModel: ViewModel() {
 //    }
 
     fun getData():LiveData<List<LatihanSoal>> = data
+
+    fun getStatus(): LiveData<ApiStatus> = status
 }

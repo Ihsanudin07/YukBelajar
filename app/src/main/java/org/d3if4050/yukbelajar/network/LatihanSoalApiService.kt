@@ -32,3 +32,5 @@ object LatihanSoalApi{
         return "$BASE_URL$soal.jpg"
     }
 }
+
+enum class ApiStatus { LOADING, SUCCESS, FAILED }

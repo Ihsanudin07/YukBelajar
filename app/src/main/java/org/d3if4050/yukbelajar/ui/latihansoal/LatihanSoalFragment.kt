@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if4050.yukbelajar.databinding.TampilanListBinding
+import org.d3if4050.yukbelajar.network.ApiStatus
 
 class LatihanSoalFragment :Fragment() {
     private val viewModel: LatihanSoalViewModel by lazy {
@@ -39,5 +40,23 @@ class LatihanSoalFragment :Fragment() {
         viewModel.getData().observe(viewLifecycleOwner, {
             myAdapter.updateData(it)
         })
+        viewModel.getStatus().observe(viewLifecycleOwner, {
+            updateProgress(it)
+        })
+    }
+
+    private fun updateProgress(status: ApiStatus) {
+        when (status) {
+            ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+            }
+            ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
+        }
     }
 }
