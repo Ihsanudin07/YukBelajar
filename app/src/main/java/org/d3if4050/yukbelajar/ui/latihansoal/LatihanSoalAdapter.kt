@@ -23,7 +23,7 @@ class LatihanSoalAdapter: RecyclerView.Adapter<LatihanSoalAdapter.ViewHolder>() 
 
         fun bind(latihanSoal: LatihanSoal) = with(binding){
             soalTextView.text = latihanSoal.soal
-            imageView.setImageResource(latihanSoal.imageId)
+            imageView.setImageResource(R.drawable.gambar1)
         }
     }
 

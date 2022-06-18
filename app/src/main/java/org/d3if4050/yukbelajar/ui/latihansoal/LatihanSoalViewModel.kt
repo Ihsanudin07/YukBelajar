@@ -17,29 +17,27 @@ class LatihanSoalViewModel: ViewModel() {
     private val data = MutableLiveData<List<LatihanSoal>>()
 
     init {
-        data.value = initData()
         retrieveData()
     }
 
     private fun retrieveData(){
         viewModelScope.launch(Dispatchers.IO){
             try {
-                val result = LatihanSoalApi.service.getLatihanSoal()
-                Log.d("LatihanSoalViewModel", "Succes: $result")
+                data.postValue(LatihanSoalApi.service.getLatihanSoal())
             }catch (e: Exception){
                 Log.d("LatihanSoalViewModel","Failure: ${e.message}")
             }
         }
     }
 
-    private fun initData(): List<LatihanSoal>{
-        return listOf(
-            LatihanSoal("1. Sebuah mobil melaju di jalan tol dengan kecepatan tetap. Dalam 2 jam, mobil tersebut sudah menempuh jarak 144 km. Kecepatan mobil adalah...", R.drawable.gambar1),
-            LatihanSoal("1. Sebuah mobil melaju ", R.drawable.gambar2),
-            LatihanSoal("1. Sebuah mobil melaju di jalan tol dengan kecepatan tetap. Dalam 2 jam, mobil tersebut sudah menempuh jarak 144 km. Kecepatan mobil adalah...", R.drawable.gambar3),
-            LatihanSoal("1. Sebuah mobil melaju di jalan tol dengan kecepatan tetap. Dalam 2 jam, mobil tersebut sudah menempuh jarak 144 km. Kecepatan mobil adalah...", R.drawable.gambar4),
-        )
-    }
+//    private fun initData(): List<LatihanSoal>{
+//        return listOf(
+//            LatihanSoal("1. Sebuah mobil melaju di jalan tol dengan kecepatan tetap. Dalam 2 jam, mobil tersebut sudah menempuh jarak 144 km. Kecepatan mobil adalah...", R.drawable.gambar1),
+//            LatihanSoal("1. Sebuah mobil melaju ", R.drawable.gambar2),
+//            LatihanSoal("1. Sebuah mobil melaju di jalan tol dengan kecepatan tetap. Dalam 2 jam, mobil tersebut sudah menempuh jarak 144 km. Kecepatan mobil adalah...", R.drawable.gambar3),
+//            LatihanSoal("1. Sebuah mobil melaju di jalan tol dengan kecepatan tetap. Dalam 2 jam, mobil tersebut sudah menempuh jarak 144 km. Kecepatan mobil adalah...", R.drawable.gambar4),
+//        )
+//    }
 
     fun getData():LiveData<List<LatihanSoal>> = data
 }
