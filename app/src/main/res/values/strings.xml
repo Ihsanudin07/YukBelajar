@@ -32,4 +32,6 @@
     <string name="batal">Batal</string>
     <string name="rumus2">Rumus</string>
     <string name="action_switch_layout">Ubah Layout</string>
+    <string name="koneksi_error">Koneksi error</string>
+    <string name="latihansoal">Latihan Soal</string>
 </resources>

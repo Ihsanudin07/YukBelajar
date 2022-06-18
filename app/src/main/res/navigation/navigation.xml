@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_hitungFragment_to_historiFragment"
             app:destination="@id/historiFragment" />
+        <action
+            android:id="@+id/action_hitungFragment_to_latihanSoalFragment"
+            app:destination="@id/latihanSoalFragment" />
     </fragment>
     <fragment
         android:id="@+id/rumusFragment"
@@ -35,4 +38,9 @@
         android:name="org.d3if4050.yukbelajar.ui.histori.HistoriFragment"
         android:label="@string/histori"
         tools:layout="@layout/fragment_histori" />
+    <fragment
+        android:id="@+id/latihanSoalFragment"
+        android:name="org.d3if4050.yukbelajar.ui.latihansoal.LatihanSoalFragment"
+        android:label="Latihan Soal"
+        tools:layout="@layout/tampilan_list"/>
 </navigation>

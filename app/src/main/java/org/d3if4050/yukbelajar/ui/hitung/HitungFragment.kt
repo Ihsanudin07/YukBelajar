@@ -74,6 +74,13 @@ class HitungFragment : Fragment() {
                 )
                 return true
             }
+
+            R.id.menu_latihansoal ->{
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_latihanSoalFragment
+                )
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
