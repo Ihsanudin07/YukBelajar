@@ -27,4 +27,8 @@ object LatihanSoalApi{
     val service: LatihanSoalApiService by lazy {
         retrofit.create(LatihanSoalApiService::class.java)
     }
+
+    fun getLatihanSoalUrl(soal: String) : String{
+        return "$BASE_URL$soal.jpg"
+    }
 }

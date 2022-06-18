@@ -3,9 +3,11 @@ package org.d3if4050.yukbelajar.ui.latihansoal
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import org.d3if4050.yukbelajar.LatihanSoal
 import org.d3if4050.yukbelajar.R
 import org.d3if4050.yukbelajar.databinding.ListSoalBinding
+import org.d3if4050.yukbelajar.network.LatihanSoalApi
 
 class LatihanSoalAdapter: RecyclerView.Adapter<LatihanSoalAdapter.ViewHolder>() {
 
@@ -23,7 +25,10 @@ class LatihanSoalAdapter: RecyclerView.Adapter<LatihanSoalAdapter.ViewHolder>() 
 
         fun bind(latihanSoal: LatihanSoal) = with(binding){
             soalTextView.text = latihanSoal.soal
-            imageView.setImageResource(R.drawable.gambar1)
+            Glide.with(imageView.context)
+                .load(LatihanSoalApi.getLatihanSoalUrl(latihanSoal.imageId))
+                .error(R.drawable.ic_baseline_heart_broken_24)
+                .into(imageView)
         }
     }
 
