@@ -36,4 +36,6 @@
     <string name="latihansoal">Latihan Soal</string>
     <string name="channel_name">Updater</string>
     <string name="channel_desc">Update data Latihan Soal otomatis</string>
+    <string name="notif_title">Ada soal baru nihhh!</string>
+    <string name="notif_text">Cek sekarang biar nggak gabut....</string>
 </resources>
