@@ -34,4 +34,6 @@
     <string name="action_switch_layout">Ubah Layout</string>
     <string name="koneksi_error">Koneksi error</string>
     <string name="latihansoal">Latihan Soal</string>
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data Latihan Soal otomatis</string>
 </resources>

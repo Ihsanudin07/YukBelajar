@@ -12,6 +12,7 @@ import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.d3if4050.yukbelajar.LatihanSoal
+import org.d3if4050.yukbelajar.MainActivity
 import org.d3if4050.yukbelajar.R
 import org.d3if4050.yukbelajar.network.ApiStatus
 import org.d3if4050.yukbelajar.network.LatihanSoalApi
@@ -59,7 +60,7 @@ class LatihanSoalViewModel: ViewModel() {
             .setInitialDelay(1, TimeUnit.MINUTES)
             .build()
         WorkManager.getInstance(app).enqueueUniqueWork(
-            "updater",
+            MainActivity.CHANNEL_ID,
             ExistingWorkPolicy.REPLACE,
             request
         )
